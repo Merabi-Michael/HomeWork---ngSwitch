@@ -1,0 +1,22 @@
+<!-- NgSwitch Binding -->
+<p>Pick your favorite item</p>
+
+<label  *ngFor="let item of items">
+
+  <div>
+
+    <input type="radio" name="items" [value]="item" [(ngModel)]="userFavoriteItem"> {{item}}
+
+  </div>
+
+</label>
+
+<div [ngSwitch]="userFavoriteItem">
+ <p *ngSwitchCase="'Teapot'">I'm little Teapot, short and stout!</p>
+ <p *ngSwitchCase="'Lamp'">This is the brighest Lapm in town. <br>Are you as bright A lamp?</p>
+ <p *ngSwitchCase="'Phone'">Wich is the slimmest Phone?</p>
+ <p *ngSwitchCase="'Television'">Has anyone seen my Television?</p>
+ <p *ngSwitchCase="'Fishbowl'">Fishbowl is strange and mysterious.</p>
+ <p *ngSwitchDefault="">Empty</p>
+
+</div>
